@@ -8,23 +8,23 @@
 #define led 6
 #define data_dht 3
 #define power_sensor 2
-RF24 radio(7, 10);                    // nRF24L01(+) radio attached using Getting Started board
+RF24 radio(7, 10);                    // Pin CSN/CE -> 7/10 
 
-RF24Network network(radio);          // Network uses that radio
+RF24Network network(radio);         
 
 DHTesp dht;
 float humidity,temperature;
-const uint16_t this_node = 01;       // Address of our node in Octal format
-const uint16_t other_node = 00;      // Address of the other node in Octal format
+const uint16_t this_node = 01;       
+const uint16_t other_node = 00;      
 
-const unsigned long interval = 2000; // How often (in ms) to send 'hello world' to the other unit
+const unsigned long interval = 2000; 
 
 uint8_t iteration=3; 
-unsigned long last_sent;             // When did we last send?
-unsigned long packets_sent;          // How many have we sent already
+unsigned long last_sent;             
+unsigned long packets_sent;         
 float buffer_soil,buffer_bat, buffer_solar;
 
-struct payload_t {                   // Structure of our payload
+struct payload_t {                   // Struktur dari payload 
   unsigned long ms;
   unsigned long counter;
   float bat;
@@ -40,25 +40,26 @@ void setup(void) {
   pinMode(power_sensor,OUTPUT);
   digitalWrite(9,HIGH);
   dht.setup(data_dht, DHTesp::DHT11);
-  Serial.begin(115200);
+  /*Serial.begin(115200); 
   if (!Serial) {
-    // some boards need this because of native USB capability
   }
-  Serial.println(F("RF24Network/examples/helloworld_tx/"));
-
+  Serial.println(F("RF24Network/examples/helloworld_tx/")); // DEBUGGING
+  */  
   SPI.begin();
   if (!radio.begin()) {
-    Serial.println(F("Radio hardware not responding!"));
+    //Serial.println(F("Radio hardware not responding!"));
     bt_sleep();
   }
   network.begin(/*channel*/ 90, /*node address*/ this_node);
 }
 
 void loop() {
-  ADCSRA = 0xC7;
+ ADCSRA = 0xC7;
+ if(counter>=8) // menjalankan pembacaan dan pengiriman tiap 8 x 8 detik = 64 detik
+ {
   digitalWrite(power_sensor,HIGH);
-  delay(1500);
-  network.update(); // Check the network regularly
+  delay(1500);  //menunggu sensor DHT11 stabil
+  network.update(); 
   
   read_analog();  //fungsi baca A0-A3
   
@@ -71,8 +72,9 @@ void loop() {
   buffer_bat=0;
   buffer_solar=0;
   buffer_soil=0;
-  bt_sleep(); //back to sleep
   
+ }
+ bt_sleep(); //masuk ke dalam deepsleep
 }
 
 void read_analog()
@@ -102,41 +104,42 @@ void read_dht11()
 void send_data()
 {
   last_sent = millis();
-    Serial.print("Sending...");
+    //Serial.print("Mengirim....");
     payload_t payload = { millis(), packets_sent++,buffer_bat,buffer_solar,buffer_soil,humidity,temperature };
     RF24NetworkHeader header(/*to node*/ other_node);
     bool ok = network.write(header, &payload, sizeof(payload));
     if (ok){
-      Serial.println("ok.");
+      //Serial.println("ok.");
       digitalWrite(led,HIGH);
       //delay(300);
     }
     else
-      Serial.println("failed.");
+      //Serial.println("failed.");
 }
 void bt_sleep()
 { 
+  //Disable register yang tidak diperlukan
   radio.powerDown();
-  // disable ADC
+  
   ADCSRA = 0;
-  // clear various "reset" flags
+  
   MCUSR = 0;
-  // allow changes, disable reset
+  
   WDTCSR = bit (WDCE) | bit (WDE);
-  // set interrupt mode and an interval
-  WDTCSR = bit (WDIE) | bit (WDP3) | bit (WDP0);    // set WDIE, and 8 seconds delay
+  
+  WDTCSR = bit (WDIE) | bit (WDP3) | bit (WDP0);   //8 Detik yang digunakan untuk basis counter
   wdt_reset();  // pat the dog
   
   set_sleep_mode (SLEEP_MODE_PWR_DOWN);
-  noInterrupts ();           // timed sequence follows
+  noInterrupts ();           
   sleep_enable();
 
-  // turn off brown-out enable in software
+  
   MCUCR = bit (BODS) | bit (BODSE);
   MCUCR = bit (BODS);
-  interrupts ();             // guarantees next instruction executed
+  interrupts ();             
   sleep_cpu ();
-  // cancel sleep as a precaution
+  
   sleep_disable();
 }
 
@@ -144,5 +147,5 @@ void bt_sleep()
 ISR (WDT_vect)
 {
   counter++;
-  wdt_disable();  // disable watchdog
-}  // end of WDT_vect
+  wdt_disable(); //menonaktifkan counter wdt ketika bangun
+} 
