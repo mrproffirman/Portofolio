@@ -7,10 +7,9 @@
 4. Menggunakan catu daya baterai Li-ion 3.7V dan sel surya 6V
 
 
-    **Dimensi Alat**
+**Dimensi Alat**
     
 ![3D Enclosure](https://github.com/mrproffirman/Portofolio/blob/main/WSN/img/3D_Sketch_wsn_atmega8_Page1.jpg)
     
-    **Keterangan Komponen**
-    
+**Keterangan Komponen**    
 ![3D Enclosure](https://github.com/mrproffirman/Portofolio/blob/main/WSN/img/3D_Sketch_wsn_atmega8_Page2.jpg)
