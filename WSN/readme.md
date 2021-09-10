@@ -1,4 +1,4 @@
-#Wireless Sensor Network Untuk Pertanian di Batu, Jawa Timur
+# Wireless Sensor Network Untuk Pertanian di Batu, Jawa Timur
 
 **Spesifikasi**
 1. Dapat membaca parameter Suhu Udara, Kelembaban Udara, Kelembaban Tanah, dan Intensitas Cahaya
