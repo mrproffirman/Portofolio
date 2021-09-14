@@ -1,10 +1,10 @@
 # Sistem Graphical User Interface untuk NurseCall Analog 
 
-**Overview**
-Alat digunakan untuk membaca masukan dari sistem nursecall analog yang sudah ada. Pembacaan digunakan untuk menampilkan nomor kamar pada monitor dan melakukan panggilan pada audio. Secara hardware, sistem terdiri dari 
+**Overview**<br />
+Alat digunakan untuk membaca masukan dari sistem nursecall analog yang sudah ada. Pembacaan digunakan untuk menampilkan nomor kamar pada monitor dan melakukan panggilan pada audio. Secara hardware, sistem terdiri dari <br />
 [NurseCall -> Hardware Interface -> SBC -> Monitor].
 
-**Fitur Alat**
+**Fitur Alat**<br />
 1. Membaca sinyal dari sistem NurseCall 0-24V sebanyak 36 Input biasa + 11 Emergency secara parallel
 2. Isolasi sinyal input dari sistem utama 5V
 3. Mengkonversi bacaan menjadi data digital yang dapat dibaca Single Board Computer.
