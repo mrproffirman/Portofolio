@@ -1,6 +1,6 @@
 # Wireless Sensor Network Untuk Pertanian di Batu, Jawa Timur
 
-**Spesifikasi**
+**Fitur**
 1. Dapat membaca parameter Suhu Udara, Kelembaban Udara, Kelembaban Tanah, dan Intensitas Cahaya
 2. Bekerja secara wireless dengan menggunakan modul NRF24 sebagai metode komunikasi utama
 3. Menggunakan Atmega8/168/328P sebagai mikrokontroller utama
