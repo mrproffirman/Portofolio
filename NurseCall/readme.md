@@ -17,4 +17,4 @@
 ![GUI](https://github.com/mrproffirman/Portofolio/blob/main/NurseCall/img/GUI.jpg)
 
 *Hardware Interface*
-![Hardware_Interface](https://github.com/mrproffirman/Portofolio/blob/main/NurseCall/img/GUI.jpg)
+![Hardware_Interface](https://github.com/mrproffirman/Portofolio/blob/main/NurseCall/img/Hardware%2BSBC.jpg)
