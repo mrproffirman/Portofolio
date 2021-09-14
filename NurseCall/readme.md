@@ -1,4 +1,5 @@
-#Sistem Graphical User Interface untuk NurseCall Analog 
+# Sistem Graphical User Interface untuk NurseCall Analog 
+
 **Overview**
  Alat digunakan untuk membaca masukan dari sistem nursecall analog yang sudah ada. Pembacaan digunakan untuk menampilkan nomor kamar pada monitor dan melakukan panggilan pada audio. Secara hardware, sistem terdiri dari [NurseCall -> Hardware Interface -> SBC -> Monitor].
 **Fitur Alat**
@@ -18,3 +19,4 @@
 
 *Hardware Interface*
 ![Hardware_Interface](https://github.com/mrproffirman/Portofolio/blob/main/NurseCall/img/Hardware%2BSBC.jpg)
+![Hardware_Interface](https://github.com/mrproffirman/Portofolio/blob/main/NurseCall/img/Implementasi.jpg)
