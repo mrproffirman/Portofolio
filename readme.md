@@ -1,1 +1,1 @@
-*Project yang tidak ada dalam portofolio ini bersifat tertutup*
+*Project yang tidak ada dalam portofolio ini bersifat tertutup/rahasia*
