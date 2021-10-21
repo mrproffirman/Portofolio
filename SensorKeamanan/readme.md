@@ -11,15 +11,8 @@ Alat digunakan untuk mendeteksi ketika terjadi pembobolan pada industri sarang w
 5. Setting durasi nyala alarm hingga maksimum 2 Menit
 
 *Board dan Skematik Sensor Cahaya*
+  ![Board](https://github.com/mrproffirman/Portofolio/tree/main/SensorKeamanan/img/Cahaya_brd.jpg)![Skematik](https://github.com/mrproffirman/Portofolio/tree/main/SensorKeamanan/img/Cahaya_sch.jpg)
 
-<p float="left">
-  <img src="https://github.com/mrproffirman/Portofolio/tree/main/SensorKeamanan/img/Cahaya_brd.jpg" width="100" />
-  <img src="https://github.com/mrproffirman/Portofolio/tree/main/SensorKeamanan/img/Cahaya_sch.jpg" width="100" />
-</p>
 
 *Board dan Skematik Sensor Getar*
-
-<p float="left">
-  <img src="https://github.com/mrproffirman/Portofolio/tree/main/SensorKeamanan/img/Getar_brd.jpg" width="100" />
-  <img src="https://github.com/mrproffirman/Portofolio/tree/main/SensorKeamanan/img/Getar_sch.jpg" width="100" />
-</p>
+  ![Board](https://github.com/mrproffirman/Portofolio/tree/main/SensorKeamanan/img/Cahaya_brd.jpg)![Skematik](https://github.com/mrproffirman/Portofolio/tree/main/SensorKeamanan/img/Cahaya_sch.jpg)
